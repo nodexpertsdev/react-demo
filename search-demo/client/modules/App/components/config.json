@@ -1,0 +1,41 @@
+{
+  "fields": [
+    {
+      "id": 1,
+      "label": "status",
+      "fieldType": "status",
+      "operators": []
+    }, {
+      "id": 1,
+      "label": "assignee",
+      "fieldType": "assignee",
+      "operators": []
+    }, {
+      "id": 1,
+      "label": "reporter",
+      "fieldType": "reporter",
+      "operators": []
+    }, {
+      "id": 1,
+      "label": "priority",
+      "fieldType": "priority",
+      "operators": []
+    }
+  ],
+
+  "operators": [
+    {
+      "id": 1,
+      "label": "=",
+      "types": ["status", "assignee", "reporter"]
+    }, {
+      "id": 1,
+      "label": "!=",
+      "types": ["priority","status", "assignee", "reporter"]
+    }
+  ],
+  "joinOperators": [
+    {"id": 1, "label": "AND"},
+    {"id": 2, "label": "OR"}
+  ]
+}
