@@ -1,9 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import IP4Field from '../../../components/IP4Field/IP4Field.js';
-import IP6Field from '../../../components/IP6Field/IP6Field.js';
-import MacField from '../../../components/MacField/MacField.js';
 import CustomField from '../../../components/CustomField/CustomField.js';
 
 import typeConfig from '../../../config/typeConfig.js';
