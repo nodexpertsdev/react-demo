@@ -1,0 +1,27 @@
+body {
+  display: block;
+  margin: 0px;
+}
+#root {
+  display: block;
+}
+
+.category {
+  width: 100%;
+}
+
+.task {
+  max-width: 310px;
+  margin: 8px;
+  display: inline-block;
+}
+
+.task-card {
+  width: 310px;
+  display: flex;
+}
+
+.col-33 {
+  width: 33.33%;
+  display: inline-block;
+}
