@@ -148,7 +148,7 @@ export default class Search extends Component {
     return(
       <div>
         <div>
-          <p>{this.state.validQuery ? "Valid" : "Not Valid"}</p>
+          {!this.state.validQuery ? <p className="text-danger" style={{height: 20+'px'}}><b>Search String is not Valid</b></p> : <p style={{height: 20+'px'}}></p>}
         </div>
         <div className="row">
           <div className="col-lg-11">
