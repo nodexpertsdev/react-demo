@@ -10,18 +10,18 @@ export default class List extends Component {
   constructor() {
     super();
     this.state = {
-      listData: data.listData
-    }
+      listData: data.listData,
+    };
   }
 
   evaluateQuery = (query) => {
-    if(!query) {
+    if (!query) {
       return true;
     }
-    let res = query.split(' ');
+    const res = query.split(' ');
     let q = '';
     res.map((item, index) => {
-      let ch = index % 4;
+      const ch = index % 4;
       switch (ch) {
         case 0:
           q += `data.${item}`;
@@ -38,6 +38,7 @@ export default class List extends Component {
         default:
           break;
       }
+      return q;
     });
     return q;
   }
@@ -47,7 +48,7 @@ export default class List extends Component {
     this.setState({
       listData: data.listData.filter(data => {
         return eval(q);
-      })
+      }),
     });
   }
 
@@ -61,6 +62,6 @@ export default class List extends Component {
           <Table tableData={this.state.listData} />
         </div>
       </div>
-    )
+    );
   }
 }

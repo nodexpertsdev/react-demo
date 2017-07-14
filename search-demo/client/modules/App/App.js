@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // Import Components
-import Message from './components/message.js';
-import Search from './components/search.js';
 import List from './components/list.js';
 import Helmet from 'react-helmet';
 
@@ -14,12 +12,8 @@ import { getMessage } from './AppReducer.js';
 
 export class App extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
-  componentWillMount(){
-    this.props.dispatch(bannerMessage('NODEXPERTS'))
+  componentWillMount() {
+    this.props.dispatch(bannerMessage('NODEXPERTS'));
   }
 
   render() {

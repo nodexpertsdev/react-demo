@@ -9,8 +9,8 @@ export function setMessage(message) {
   };
 }
 
-export function bannerMessage(message){
+export function bannerMessage(message) {
   return (dispatch) => {
     dispatch(setMessage(message));
-  }
+  };
 }

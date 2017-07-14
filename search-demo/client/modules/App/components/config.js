@@ -11,8 +11,8 @@ export const replaceOperators = (op) => {
       operator = '||';
       break;
     default:
-    operator = op;
+      operator = op;
       break;
   }
   return operator;
-}
+};

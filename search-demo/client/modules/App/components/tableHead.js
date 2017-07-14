@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class TableHead extends Component {
-  constructor(props) {
-    super(props);
-  }
+const TableHead = ({ heading }) => {
+  return (
+    <thead className="thead-inverse">
+      <tr>
+        {
+          heading.map((item, key) => {
+            return <th key={key}>{item}</th>;
+          })
+        }
+      </tr>
+    </thead>
+  );
+};
 
-  render() {
-    return (
-      <thead className="thead-inverse">
-        <tr>
-          {
-            this.props.heading.map((item, key) => {
-              return <th key={key}>{item}</th>
-            })
-          }
-        </tr>
-      </thead>
-    )
-  }
-}
+TableHead.propTypes = {
+  heading: PropTypes.array.isRequired,
+};
+
+export default TableHead;

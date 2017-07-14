@@ -23,7 +23,7 @@ const AppReducer = (state = initialState, action) => {
 // Get showAddPost
 export const getMessage = (state) => {
   return state.app.message;
-}
+};
 
 // Export Reducer
 export default AppReducer;
