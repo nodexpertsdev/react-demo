@@ -1,61 +1,54 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import typeConfig from '../../config/typeConfig.js';
-
 export default class InputField extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       value: '',
     };
   }
 
-  handleFocus = (length,value, size, index, regEx) => {
-    if(!(length <= size)) {
+  handleFocus = (length, value, size, index, regEx, type) => {
+    if (!(length <= size)) {
       this.props.handleFocus(index);
     }
-    return value.replace(regEx,'').substring(0,size);
+    const tempValue = value.replace(regEx, '').substring(0, size);
+    if (type === 'ipv4Field') {
+      return tempValue > 255 ? 255 : tempValue;
+    }
+    return tempValue;
   }
 
   handleHexa = (event) => {
-    const { regEx, size, index } = this.props.config;
+    const { regEx, size, index, type } = this.props.config;
     const value = event.target.value;
-    const tempValue = this.handleFocus(value.length, value, size, index, regEx);
+    const tempValue = this.handleFocus(value.length, value, size, index, regEx, type);
     this.setState({
       value: tempValue,
-    })
-  }
-
-  handleNumberFocus = (value,min,max,size,index) => {
-    
-  }
-
-  handleNumber = (event) => {
-    const { min, max, index } = this.props.config;
-    const value = event.target.value;
-    const tempValue = (value >= min && value <= max) ? value : 255;
-    this.setState({
-      value: tempValue,
-    })
+    });
   }
 
   render() {
-    const { type } = this.props.config;
-    return(
+    return (
       <input
-        className='inputfield'
+        className="inputfield"
         ref={
           input => {
-            this.inputField = input
+            this.inputField = input;
           }
         }
-        value = {this.state.value}
-        onChange = {type === 'number' ? this.handleNumber : this.handleHexa}
-        type={type}
+        value={this.state.value}
+        onChange={this.handleHexa}
+        type="text"
       />
     );
   }
 
 }
+
+InputField.propTypes = {
+  config: PropTypes.object.isRequired,
+  handleFocus: PropTypes.func.isRequired,
+};

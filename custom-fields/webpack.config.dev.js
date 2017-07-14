@@ -18,7 +18,6 @@ devtool: 'hidden-source-map',
       'react',
       'react-dom',
       'jquery',
-      'bootstrap',
     ],
   },
 

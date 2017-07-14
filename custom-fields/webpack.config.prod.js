@@ -18,7 +18,6 @@ module.exports = {
       'react',
       'react-dom',
       'jquery',
-      'bootstrap',
     ]
   },
 
