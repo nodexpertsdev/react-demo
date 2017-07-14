@@ -20,10 +20,8 @@ const typeConfig = {
   ipv4Field: {
     separator: '.',
     segments: 4,
-    regEx: '/(1?[0-9]{1,2}|2[0-4][0-9]|25[0-5])/g',
+    regEx: /([^0-9]){1}/g,
     size: 3,
-    min: 0,
-    max: 255,
     type: 'number',
   },
 };

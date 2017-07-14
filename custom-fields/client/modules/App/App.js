@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // Import Components
-import Message from './components/message.js';
+import Message from './components/demo.js';
 import Helmet from 'react-helmet';
 
 // Import Actions
@@ -12,12 +12,8 @@ import { getMessage } from './AppReducer.js';
 
 export class App extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
-  componentWillMount(){
-    this.props.dispatch(bannerMessage('NODEXPERTS'))
+  componentWillMount() {
+    this.props.dispatch(bannerMessage('React-Demo'));
   }
 
   render() {
@@ -48,7 +44,7 @@ export class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.object,
   dispatch: PropTypes.func.isRequired,
   message: PropTypes.string,
 };

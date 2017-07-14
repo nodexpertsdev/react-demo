@@ -1,8 +1,14 @@
 .customField {
   display: inline-block;
   border: 2px solid blue;
-  padding : 3px;
+  padding : 1px;
   margin : 2px;
+}
+
+.customField:focus,
+.customField.focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
 }
 
 .inputfield {
@@ -15,10 +21,6 @@
   margin: auto 2px;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0;
+input:focus {
+  outline: none;
 }
