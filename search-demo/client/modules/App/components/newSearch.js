@@ -39,9 +39,6 @@ export default class NewSearch extends Component {
 
   splitString = (str) => {
     str = str.replace(/\s\s+/g, ' ');
-    if(str == ' ') {
-      str = str.trim();
-    }
     let splitString = str.split(' ');
     let length = splitString.length
     let res = length % 4;
