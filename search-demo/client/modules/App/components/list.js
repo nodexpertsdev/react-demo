@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Search from './search.js';
+import Search from './newSearch.js';
 import Table from './table.js';
 import data from './data.json';
 
